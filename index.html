@@ -225,7 +225,7 @@ footer{text-align:center;padding:30px 0 40px;font-size:12.5px;color:var(--faint)
   <div>
     <div class="eb">Contact</div>
     <h2 class="h2" data-i="Un projet réseau, sécurité ou infrastructure ? Discutons-en.|A network, security or infrastructure project? Let's talk."></h2>
-    <a class="ci" href="mailto:arij.abdaoui@etudiant-fst.utm.tn"><span class="ar">✉</span>arij.abdaoui@etudiant-fst.utm.tn</a>
+    <a class="ci" href="mailto:arijabdeoui@gmail.com"><span class="ar">✉</span>arij.abdaoui@etudiant-fst.utm.tn</a>
     <a class="ci" href="tel:+21652636675"><span class="ar">☎</span>+216 52 636 675</a>
     <div class="ci"><span class="ar">⌖</span>Tunis, Tunisie</div>
   </div>
@@ -323,11 +323,17 @@ const cf=$('#cf'),fb=$('#fb'),fs=$('#fs');
 const say=(m,c)=>{fs.textContent=t(m);fs.className=c||''};
 cf.onsubmit=e=>{
   e.preventDefault();
-  if(PK==="YOUR_PUBLIC_KEY")return say("Formulaire pas encore configuré — écrivez directement à arij.abdaoui@etudiant-fst.utm.tn.|Form not configured yet — please email arij.abdaoui@etudiant-fst.utm.tn directly.",'err');
-  fb.disabled=true;say("Envoi en cours…|Sending…");
-  emailjs.sendForm(SID,TID,cf).then(()=>{say("Message envoyé ! Je vous répondrai bientôt.|Message sent! I'll get back to you soon.",'ok');cf.reset()})
-  .catch(()=>say("L'envoi a échoué. Réessayez ou écrivez-moi directement par email.|Sending failed. Please retry or email me directly.",'err'))
-  .finally(()=>fb.disabled=false);
+if(PK==="YOUR_PUBLIC_KEY")return say("Formulaire pas encore configuré — écrivez directement à arijabdeoui@gmail.com.|Form not configured yet — please email arijabdeoui@gmail.com directly.",'err');
+
+fb.disabled=true;
+say("Envoi en cours…|Sending…");
+
+emailjs.sendForm(SID,TID,cf).then(()=>{
+  say("Message envoyé ! Je vous répondrai bientôt.|Message sent! I'll get back to you soon.",'ok');
+  cf.reset();
+})
+.catch(()=>say("L'envoi a échoué. Réessayez ou écrivez-moi directement par email.|Sending failed. Please retry or email me directly.",'err'))
+.finally(()=>fb.disabled=false);
 };
 </script>
 </body>
